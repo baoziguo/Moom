@@ -14,7 +14,7 @@ android {
         debug {
             // 显示Log
             buildConfigField "boolean", "LOG_DEBUG", "true"
-            buildConfigField "String", "SERVER_HOST", "测试服务器地址"
+//            buildConfigField "String", "SERVER_HOST", "测试服务器地址"
             minifyEnabled false
             zipAlignEnabled true
             shrinkResources false
@@ -24,7 +24,7 @@ android {
 
         release {
             buildConfigField "boolean", "LOG_DEBUG", "false"
-            buildConfigField "String", "SERVER_HOST", "正式服务器地址"
+//            buildConfigField "String", "SERVER_HOST", "正式服务器地址"
             minifyEnabled true
             zipAlignEnabled true
             // 移除无用的resource文件
@@ -44,4 +44,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.zhouyou:rxeasyhttp:2.0.5'
     implementation 'com.orhanobut:logger:1.15'
+    implementation 'com.google.code.gson:gson:2.8.1'
 }
