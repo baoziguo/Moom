@@ -1,7 +1,6 @@
 package com.baozi.moom;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.zhouyou.http.EasyHttp;
@@ -18,7 +17,11 @@ import com.zhouyou.http.cookie.CookieManger;
 public class MyApplication extends Application {
 
     public static SharedPreferences userPreferences;
-    public static Context context;
+    private static MyApplication instance;
+
+    public static MyApplication getInstance() {
+        return instance;
+    }
 
     @Override
     public void onCreate() {
@@ -30,7 +33,7 @@ public class MyApplication extends Application {
      * 初始化配置
      */
     private void init() {
-        context = this;
+        instance = this;
         userPreferences = getSharedPreferences("user",MODE_PRIVATE);//创建用户sp
         EasyHttp.init(this);//默认初始化,必须调用
         //以下设置的所有参数是全局参数,同样的参数可以在请求的时候再设置一遍,那么对于该请求来讲,请求中的参数会覆盖全局参数

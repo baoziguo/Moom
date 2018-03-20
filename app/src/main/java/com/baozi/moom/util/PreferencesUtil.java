@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
  */
 public class PreferencesUtil {
 
-    private String mObjectCachePath =  MyApplication.context.getExternalFilesDir("ObjectCache").getAbsolutePath();
+    private String mObjectCachePath =  MyApplication.getInstance().getApplicationContext().getExternalFilesDir("ObjectCache").getAbsolutePath();
 
     public static <T> void putPreferences(String key, T value) {
         SharedPreferences.Editor editor = MyApplication.userPreferences.edit();

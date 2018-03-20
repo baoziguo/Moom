@@ -35,6 +35,11 @@ android {
     }
 }
 
+//移除重复引用的module
+//configurations {
+//    all*.exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+//}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
